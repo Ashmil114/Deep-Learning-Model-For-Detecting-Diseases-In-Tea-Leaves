@@ -1,0 +1,131 @@
+{% extends 'index.html' %}
+{% block title %}Login{% endblock %}
+{% block content %}
+
+<div class="main">
+    <form action="#" method="post">
+        <div>
+            <div class="title">
+                <h2>REGISTRATION</h2>
+            </div>
+            <div class="flash">
+                {% for message in get_flashed_messages() %}
+                <p>{{ message }}</p>
+                {% endfor %}
+            </div>
+            <div class="form-items">
+                <div class="form-item">
+                    <div class="label"><label for="">Name</label></div>
+                    <div class="field">
+                        <input type="text" name="name"  required>
+                    </div>
+                    <div class="label"><label for="">Email</label></div>
+                    <div class="field">
+                        <input type="email" name="email"  required>
+                    </div>
+                    <div class="label"><label for="">Password</label></div>
+                    <div class="field">
+                        <input type="password" name="password"  required>
+                    </div>
+                    
+                    <div class="field">
+                        <input class="submit" type="submit" value="Register"></div>
+                    </div>
+                    <div class="new"><p>Have u already account ? <a href="/login">Click Here</a></p></div>
+                </div>
+                
+            </div>
+        </div>
+    </form>
+</div>
+
+<style>
+    .main{
+        width: 100%;
+        height: 70vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    form{
+        width: 300px;
+        height: 400px;
+        background-color: rgba(15, 15, 15, 0.5);
+        /* border: 1px solid black; */
+    }
+    form .title{
+        width: 100%;
+        height: 60px;
+        text-align: center;
+        /* background-color: #34D399; */
+        
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* border-bottom: 1px solid  black; */
+    }
+    form .title h2{
+        margin: 0;
+        color: #fff;
+    }
+    .flash{
+        color: red;
+        text-align: center
+    }
+    .form-items{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* background-color: #047857; */
+        
+        
+    }
+    .form-item{
+        width: 100%;
+        height: 300px;
+        margin-top: 20px;
+        position: relative;
+        
+    }
+    .field{
+        width: 100%;
+        text-align: center;
+        
+        
+    }
+    .label{
+        height: 10px;
+        margin-bottom: 5px;
+        margin-left: 30px;
+        color: #fff;
+    }
+    input{
+        padding: 8px;
+        margin: 10px;
+        outline: none;
+        width: 80%;
+        border: none;
+        border-bottom: 1px solid #fff;
+        background-color: rgba(255, 255, 255, 0);
+        color:#fff;
+    }
+    .submit{
+        background-color: #007248;
+        outline: none;
+        border: none;
+        color: #fff;
+    }
+    .submit:hover{
+        background-color: #10B981 ;
+    }
+    .new{
+        text-align: center;
+        color: #fff;
+        position: absolute;
+        bottom: 120px;
+        font-weight: bold;
+    }
+</style>
+
+{% endblock %}
